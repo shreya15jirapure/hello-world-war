@@ -1,10 +1,4 @@
-# Use an official Tomcat base image with JDK
-FROM tomcat:9.0-jdk11
-
-# Copy your JAR file to a directory in the container
-COPY target/* /usr/local/tomcat/
-
-# Set the entrypoint to run the JAR file with the java command
-ENTRYPOINT ["java", "-jar", "your-app.jar"]
-
+FROM openjdk:8
 EXPOSE 8082
+ADD target/hello-world-war-1.0.0.war /opt/tomcat/webapps
+ENTRYPOINT ["java","-jar","/hello-world-war-1.0.0.war"]
