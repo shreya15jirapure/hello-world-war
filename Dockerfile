@@ -6,3 +6,5 @@ COPY target/* /usr/local/tomcat/
 
 # Set the entrypoint to run the JAR file with the java command
 ENTRYPOINT ["java", "-jar", "your-app.jar"]
+
+EXPOSE 8082
